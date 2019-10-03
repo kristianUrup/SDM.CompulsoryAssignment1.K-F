@@ -14,9 +14,9 @@ namespace XUnitTestProject
             {
                 new Movie { Reviewer = 1},
                 new Movie { Reviewer = 1},
-                new Movie { Reviewer = 1},
-                new Movie { Reviewer = 1},
-                new Movie { Reviewer = 1}
+                new Movie { Reviewer = 2},
+                new Movie { Reviewer = 2},
+                new Movie { Reviewer = 3}
             };
             MovieSystem ms = new MovieSystem(movies);
         }
