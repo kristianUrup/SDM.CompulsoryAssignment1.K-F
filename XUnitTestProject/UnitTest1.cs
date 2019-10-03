@@ -186,5 +186,38 @@ namespace XUnitTestProject
             MovieSystem ms = new MovieSystem(movies);
             Assert.Throws<InvalidDataException>(() => ms.AverageGradeOfMovie(movieId));
         }
+
+        [Theory]
+        [InlineData(1,2,1)]
+        [InlineData(1, 2, 4)]
+        [InlineData(1, 1, 1)]
+        [InlineData(2, 3, 2)]
+        public void TestAmountOfGradesGivenById(double expAmount, int movieId, int grade)
+        {
+            List<Movie> movies = new List<Movie>()
+            {
+                new Movie { Reviewer = 1, Grade = 1, MovieId = 1},
+                new Movie { Reviewer = 1, Grade = 1, MovieId = 2},
+                new Movie { Reviewer = 2, Grade = 2, MovieId = 3},
+                new Movie { Reviewer = 2, Grade = 2, MovieId = 3},
+                new Movie { Reviewer = 3, Grade = 4, MovieId = 2}
+            };
+            MovieSystem ms = new MovieSystem(movies);
+            Assert.Equal(expAmount,ms.AmountOfGradesGivenById(movieId,grade));
+        }
+
+        public void TestExceptionThrownByAmountOfGradesGivenById(int movieId, int grade)
+        {
+            List<Movie> movies = new List<Movie>()
+            {
+                new Movie { Reviewer = 1, Grade = 1, MovieId = 1},
+                new Movie { Reviewer = 1, Grade = 1, MovieId = 2},
+                new Movie { Reviewer = 2, Grade = 2, MovieId = 3},
+                new Movie { Reviewer = 2, Grade = 2, MovieId = 3},
+                new Movie { Reviewer = 3, Grade = 4, MovieId = 2}
+            };
+            MovieSystem ms = new MovieSystem(movies);
+            Assert.Throws<InvalidDataException>(() => ms.AmountOfGradesById(movieId, grade));
+        }
     }
 }

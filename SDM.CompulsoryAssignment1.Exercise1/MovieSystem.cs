@@ -118,9 +118,20 @@ namespace SDM.CompulsoryAssignment1.Exercise1
         }
 
         //Exercise 6
-        public int MovieAverageGrade(int movieId)
+        public int AmountOfGradesGivenById(int movieId, int grade)
         {
-            throw new NotImplementedException();
+            int amount = 0;
+            foreach (var movie in _movies)
+            {
+                if (movie.MovieId == movieId && movie.Grade == grade)
+                {
+                    amount++;
+                }
+            }
+
+            if (amount == 0) throw new InvalidDataException("No movie with that grade is found");
+
+            return amount;
         }
 
         //Exercise 7
