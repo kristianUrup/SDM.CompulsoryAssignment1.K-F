@@ -10,9 +10,15 @@ namespace XUnitTestProject
         [Fact]
         public void TestReviewsById()
         {
-            List<Movie> movies = new List<Movie>();
+            List<Movie> movies = 
+            {
+                new Movie { Reviewer = 1},
+                new Movie { Reviewer = 1},
+                new Movie { Reviewer = 1},
+                new Movie { Reviewer = 1},
+                new Movie { Reviewer = 1}
+            };
             MovieSystem ms = new MovieSystem(movies);
-            //bla bla bla 
         }
     }
 }
