@@ -99,13 +99,26 @@ namespace SDM.CompulsoryAssignment1.Exercise1
         }
         
         //Exercise 5
-        public double RateOfMovie(int movieId)
+        public double AverageGradeOfMovie(int movieId)
         {
-            throw new NotImplementedException();
+            double sumRating = 0;
+            double amountOfRates = 0;
+            foreach (var movie in _movies)
+            {
+                if (movie.MovieId == movieId)
+                {
+                    sumRating = sumRating + movie.Grade;
+                    amountOfRates++;
+                }
+            }
+            if (sumRating == 0) throw new InvalidDataException
+                ("The movie has not given a grade yet or the movie doesnt exist");
+
+            return sumRating / amountOfRates;
         }
 
         //Exercise 6
-        public int MovieRecievedSpecificRate(int movieId, int Rate)
+        public int MovieAverageGrade(int movieId)
         {
             throw new NotImplementedException();
         }
