@@ -59,12 +59,12 @@ namespace SDM.CompulsoryAssignment1.Exercise1
         }
 
         //Exercise 3
-        public int AmountOfGradesById(int reviewerId)
+        public int AmountOfGradesById(int reviewerId, int grade)
         {
             int gradesById = 0;
             foreach (var movie in _movies)
             {
-                if (movie.Reviewer == reviewerId)
+                if (movie.Reviewer == reviewerId && movie.Grade == grade) 
                 {
                     gradesById++;
                 }
@@ -72,16 +72,30 @@ namespace SDM.CompulsoryAssignment1.Exercise1
 
             if (gradesById == 0)
             {
-                throw new InvalidDataException("The id was not found");
+                throw new InvalidDataException("Could not find reviews by this ID or grade");
             }
 
             return gradesById;
         }
 
         //Exercise 4
-        public int ReviewedMovie(int movieId)
+        public int MovieReviews(int movieId)
         {
-            throw new NotImplementedException();
+            int amountOfReviews = 0;
+            foreach (var movie in _movies)
+            {
+                if (movieId == movie.MovieId)
+                {
+                    amountOfReviews++;
+                }
+            }
+
+            if (amountOfReviews == 0)
+            {
+                throw new InvalidDataException("Movie not watched yet,or the movie does not exists, pick another movie");
+            }
+
+            return amountOfReviews;
         }
         
         //Exercise 5
