@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using Xunit;
+using Xunit.Sdk;
 
 namespace XUnitTestProject
 {
@@ -218,6 +219,34 @@ namespace XUnitTestProject
             };
             MovieSystem ms = new MovieSystem(movies);
             Assert.Throws<InvalidDataException>(() => ms.AmountOfGradesById(movieId, grade));
+        }
+
+        [Fact]
+        public void TestMoviesWithTopRate5()
+        {
+            List<Movie> movies = new List<Movie>()
+            {
+                new Movie { Reviewer = 1, Grade = 1, MovieId = 1},
+                new Movie { Reviewer = 1, Grade = 1, MovieId = 2},
+                new Movie { Reviewer = 2, Grade = 5, MovieId = 3},
+                new Movie { Reviewer = 2, Grade = 2, MovieId = 3},
+                new Movie { Reviewer = 3, Grade = 4, MovieId = 2},
+                new Movie { Reviewer = 3, Grade = 4, MovieId = 2},
+                new Movie { Reviewer = 3, Grade = 5, MovieId = 3},
+                new Movie { Reviewer = 3, Grade = 4, MovieId = 2},
+                new Movie { Reviewer = 2, Grade = 5, MovieId = 3},
+                new Movie { Reviewer = 3, Grade = 4, MovieId = 2},
+                new Movie { Reviewer = 3, Grade = 5, MovieId = 2}
+            };
+            MovieSystem ms = new MovieSystem(movies);
+            List<Movie> expList = new List<Movie>()
+            {
+                new Movie
+                {
+                    Reviewer = 3, Grade = 5,MovieId = 3
+                }
+            };
+            Assert.Equal(expList,ms.MoviesWithTopRate5());
         }
     }
 }

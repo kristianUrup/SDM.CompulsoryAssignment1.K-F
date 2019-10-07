@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Linq;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace SDM.CompulsoryAssignment1.Exercise1
 {
@@ -135,9 +137,66 @@ namespace SDM.CompulsoryAssignment1.Exercise1
         }
 
         //Exercise 7
-        public int MoviesWithTopRate5()
+        public List<Movie> MoviesWithTopRate5()
         {
-            throw new NotImplementedException();
+            //List<Movie> tempList = _movies.Where(m => m.Grade == 5).OrderBy(m => m.MovieId).ToList();
+            //int[] listToSort = new int[tempList.Count()];
+            //int[] anotherList = new int[tempList.];
+            //for (int i = 0; i < UPPER; i++)
+            //{
+                
+            //}
+
+            //foreach (var movie in tempList)
+            //{
+            //    for (int i = 1; i < tempList.Count()-1; i++)
+            //    {
+            //        if (movie.MovieId == i)
+            //        {
+            //            count++;
+            //        }
+            //        else
+            //        {
+            //            listToSort = new int[i,movie.MovieId];
+            //        }
+            //    }
+            //}
+
+            //for (int i = 0; i < listToSort.Length; i++)
+            //{
+            //    for (int j = 1; j < listToSort[i,1]; j++)
+            //    {
+            //        if (i < j)
+            //        {
+            //            listToSort = new int[i,j];
+            //        }
+            //    }
+            //}
+            //List<object> addingList = new List<object>();
+            //foreach (var movie in tempList)
+            //{
+            //    foreach (var movie1 in tempList)
+            //    {
+            //        if (movie.MovieId != movie1.MovieId)
+            //        {
+            //            addingList.Add(new 
+            //            {
+            //                MovieId = movie1.MovieId,
+            //                count = count
+            //            });
+            //            count = 0;
+                        
+            //        }
+            //        else
+            //        {
+            //            count++;
+            //        }
+                    
+            //    }
+            //}
+
+
+            return tempList;
         }
 
         //Exercise 8 
