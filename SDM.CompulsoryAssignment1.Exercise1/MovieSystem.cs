@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;
 using System.Linq;
 using Microsoft.EntityFrameworkCore.Internal;
+using Newtonsoft.Json;
 
 namespace SDM.CompulsoryAssignment1.Exercise1
 {
@@ -12,7 +13,11 @@ namespace SDM.CompulsoryAssignment1.Exercise1
         private List<Movie> _movies;
         public MovieSystem(string fileName)
         {
-            //TODO
+            using (StreamReader r = new StreamReader(fileName))
+            {
+                var json = r.ReadToEnd();
+                _movies = JsonConvert.DeserializeObject<List<Movie>>(json);
+            }
         }
 
         public MovieSystem(List<Movie> movies)
