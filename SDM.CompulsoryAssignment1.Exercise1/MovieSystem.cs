@@ -144,7 +144,7 @@ namespace SDM.CompulsoryAssignment1.Exercise1
             //int[] anotherList = new int[tempList.];
             //for (int i = 0; i < UPPER; i++)
             //{
-                
+
             //}
 
             //foreach (var movie in tempList)
@@ -185,18 +185,19 @@ namespace SDM.CompulsoryAssignment1.Exercise1
             //                count = count
             //            });
             //            count = 0;
-                        
+
             //        }
             //        else
             //        {
             //            count++;
             //        }
-                    
+
             //    }
             //}
 
 
-            return tempList;
+            //return tempList;
+            throw new NotImplementedException();
         }
 
         //Exercise 8 
