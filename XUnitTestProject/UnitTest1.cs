@@ -221,7 +221,7 @@ namespace XUnitTestProject
             Assert.Throws<InvalidDataException>(() => ms.AmountOfGradesById(movieId, grade));
         }
 
-        [Fact]
+        /*[Fact]
         public void TestMoviesWithTopRate5()
         {
             List<Movie> movies = new List<Movie>()
@@ -247,6 +247,6 @@ namespace XUnitTestProject
                 }
             };
             Assert.Equal(expList,ms.MoviesWithTopRate5());
-        }
+        }*/
     }
 }
