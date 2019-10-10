@@ -10,24 +10,42 @@ namespace XUnitTestProject
 {
     public class PerformanceOptimizing
     {
+        private static MovieSystem _ms;
+
+        public PerformanceOptimizing()
+        {
+            _ms = new MovieSystem("ratings.json");
+        }
+
         [Fact]
         public void PerformanceTestReviewsById()
         {
-            Stopwatch.StartNew();
+            var stopwatch = new Stopwatch();
             int id = 1;
 
-            List<Movie> movies = new List<Movie>()
-            {
-                new Movie { Reviewer =  1},
-                new Movie { Reviewer =  1},
-                new Movie { Reviewer =  2},
-                new Movie { Reviewer =  2},
-                new Movie { Reviewer =  3},
-            };
-            MovieSystem ms = new MovieSystem(movies);
-            int result = ms.ReviewsById(id);
-            var stop = Stopwatch.GetTimestamp();
-            Assert.True(stop <= 4);
+            stopwatch.Start();
+            int result = _ms.ReviewsById(id);
+            stopwatch.Stop();
+
+            var stop = stopwatch.ElapsedMilliseconds;
+            long time = 4000;
+            Assert.True(stop <= time);       
+        }
+
+        [Fact]
+        public void PerformanceTestAmountOfGradesGivenById()
+        {
+            var stopwatch = new Stopwatch();
+            int movieId = 2;
+            int grade = 3;
+
+            stopwatch.Start();
+            _ms.AmountOfGradesById(movieId, grade);
+            stopwatch.Stop();
+
+            var stop = stopwatch.ElapsedMilliseconds;
+            long time = 4000;
+            Assert.True(stop <= time);
         }
     }
 }
