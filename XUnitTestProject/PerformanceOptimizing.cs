@@ -28,8 +28,8 @@ namespace XUnitTestProject
             stopwatch.Stop();
 
             var stop = stopwatch.ElapsedMilliseconds;
-            long time = 4000;
-            Assert.True(stop <= time);       
+            long expectedTime = 4000;
+            Assert.True(stop <= expectedTime);       
         }
 
         [Fact]
@@ -44,8 +44,23 @@ namespace XUnitTestProject
             stopwatch.Stop();
 
             var stop = stopwatch.ElapsedMilliseconds;
-            long time = 4000;
-            Assert.True(stop <= time);
+            long expectedTime = 4000;
+            Assert.True(stop <= expectedTime);
+        }
+
+        [Fact]
+        public void TestMovieReviews()
+        {
+            int movieId = 3;
+            var stopwatch = new Stopwatch();
+
+            stopwatch.Start();
+            _ms.MovieReviews(3);
+            stopwatch.Stop();
+
+            var stop = stopwatch.ElapsedMilliseconds;
+            long expectedTime = 4000;
+            Assert.True(stop <= expectedTime);
         }
     }
 }
