@@ -155,17 +155,17 @@ namespace XUnitTestProject
         
         [Theory]
         [InlineData(1,1)]
-        [InlineData(2.5, 2)]
-        [InlineData(2.5, 3)]
+        [InlineData(2, 2)]
+        [InlineData(3, 3)]
         public void TestAverageGradeOfMovie(double expRate, int movieId)
         {
             List<Movie> movies = new List<Movie>()
             {
                 new Movie { Reviewer = 1, Grade = 1,MovieId = 1},
-                new Movie { Reviewer = 1, Grade = 1,MovieId = 2},
-                new Movie { Reviewer = 2, Grade = 2, MovieId = 3},
+                new Movie { Reviewer = 1, Grade = 2,MovieId = 2},
                 new Movie { Reviewer = 2, Grade = 3, MovieId = 3},
-                new Movie { Reviewer = 3, Grade = 4, MovieId = 2}
+                new Movie { Reviewer = 2, Grade = 3, MovieId = 3},
+                new Movie { Reviewer = 3, Grade = 2, MovieId = 2}
             };
             MovieSystem ms = new MovieSystem(movies);
             Assert.Equal(expRate,ms.AverageGradeOfMovie(movieId));
