@@ -207,6 +207,11 @@ namespace XUnitTestProject
             Assert.Equal(expAmount,ms.AmountOfGradesGivenById(movieId,grade));
         }
 
+        [Theory]
+        [InlineData(1, 2)]
+        [InlineData(1, 3)]
+        [InlineData(1, 1)]
+        [InlineData(2, 3)]
         public void TestExceptionThrownByAmountOfGradesGivenById(int movieId, int grade)
         {
             List<Movie> movies = new List<Movie>()

@@ -70,7 +70,7 @@ namespace XUnitTestProject
         [Fact]
         public void PerformanceTestMovieReviews()
         {
-            int movieId = 3;
+            
             var stopwatch = new Stopwatch();
 
             stopwatch.Start();
