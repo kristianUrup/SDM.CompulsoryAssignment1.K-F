@@ -121,7 +121,8 @@ namespace SDM.CompulsoryAssignment1.Exercise1
             if (sumRating == 0) throw new InvalidDataException
                 ("The movie has not given a grade yet or the movie doesnt exist");
 
-            return sumRating / amountOfRates;
+            double result = sumRating / amountOfRates;
+            return result;
         }
 
         //Exercise 6
