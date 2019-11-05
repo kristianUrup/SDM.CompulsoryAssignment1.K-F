@@ -102,7 +102,7 @@ namespace XUnitTestProject
         [Fact]
         public void PerformanceTestAmountOfGradesGivenById()
         {
-            int movieId = 3;
+            int movieId = 2;
             int grade = 4;
             var stopwatch = new Stopwatch();
 
