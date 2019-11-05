@@ -86,7 +86,7 @@ namespace XUnitTestProject
         [Fact]
         public void PerformanceTestAverageGradeOfMovie()
         {
-            int movieId = 3;
+            int movieId = 2567280;
             var stopwatch = new Stopwatch();
 
             stopwatch.Start();
