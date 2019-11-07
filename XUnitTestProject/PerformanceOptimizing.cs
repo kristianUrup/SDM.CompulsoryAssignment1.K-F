@@ -54,7 +54,7 @@ namespace XUnitTestProject
         public void PerformanceTestAmountOfGradesById()
         {
             var stopwatch = new Stopwatch();
-            int movieId = 2;
+            int movieId = 1922778;
             int grade = 3;
 
             stopwatch.Start();
@@ -70,11 +70,11 @@ namespace XUnitTestProject
         [Fact]
         public void PerformanceTestMovieReviews()
         {
-            int movieId = 3;
+            int movieId = 1922778;
             var stopwatch = new Stopwatch();
 
             stopwatch.Start();
-            _ms.MovieReviews(3);
+            _ms.MovieReviews(movieId);
             stopwatch.Stop();
 
             var stop = stopwatch.ElapsedMilliseconds;
@@ -86,7 +86,7 @@ namespace XUnitTestProject
         [Fact]
         public void PerformanceTestAverageGradeOfMovie()
         {
-            int movieId = 3;
+            int movieId = 1922778;
             var stopwatch = new Stopwatch();
 
             stopwatch.Start();
@@ -102,7 +102,7 @@ namespace XUnitTestProject
         [Fact]
         public void PerformanceTestAmountOfGradesGivenById()
         {
-            int movieId = 3;
+            int movieId = 1922778;
             int grade = 4;
             var stopwatch = new Stopwatch();
 
