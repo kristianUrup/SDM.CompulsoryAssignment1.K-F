@@ -22,7 +22,7 @@ namespace XUnitTestProject
         public void PerformanceTestReviewsById()
         {
             var stopwatch = new Stopwatch();
-            int id = 1;
+            int id = 3;
 
             stopwatch.Start();
             int result = _ms.ReviewsById(id);
