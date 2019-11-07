@@ -10,22 +10,17 @@ namespace XUnitTestProject
 {
     public class PerformanceOptimizing
     {
-        private static MovieSystem _ms;
-
-        public PerformanceOptimizing()
-        {
-            _ms = new MovieSystem("ratings.json");
-        }
 
         //Exercise 1
         [Fact]
         public void PerformanceTestReviewsById()
         {
+            MovieSystem _ms = new MovieSystem("ratings.json");
             var stopwatch = new Stopwatch();
             int id = 3;
 
             stopwatch.Start();
-            int result = _ms.ReviewsById(id);
+            _ms.ReviewsById(id);
             stopwatch.Stop();
 
             var stop = stopwatch.ElapsedMilliseconds;
@@ -37,7 +32,8 @@ namespace XUnitTestProject
         [Fact]
         public void PerformanceTestAverageScoreById()
         {
-            int movieId = 41422;
+            MovieSystem _ms = new MovieSystem("ratings.json");
+            int movieId = 16272;
             var stopwatch = new Stopwatch();
 
             stopwatch.Start();
@@ -53,9 +49,10 @@ namespace XUnitTestProject
         [Fact]
         public void PerformanceTestAmountOfGradesById()
         {
+            MovieSystem _ms = new MovieSystem("ratings.json");
             var stopwatch = new Stopwatch();
-            int movieId = 41422;
-            int grade = 4;
+            int movieId = 16272;
+            int grade = 16;
 
             stopwatch.Start();
             _ms.AmountOfGradesById(movieId, grade);
@@ -70,6 +67,7 @@ namespace XUnitTestProject
         [Fact]
         public void PerformanceTestMovieReviews()
         {
+            MovieSystem _ms = new MovieSystem("ratings.json");
             int movieId = 41422;
             var stopwatch = new Stopwatch();
 
@@ -86,6 +84,7 @@ namespace XUnitTestProject
         [Fact]
         public void PerformanceTestAverageGradeOfMovie()
         {
+            MovieSystem _ms = new MovieSystem("ratings.json");
             int movieId = 41422;
             var stopwatch = new Stopwatch();
 
@@ -102,6 +101,7 @@ namespace XUnitTestProject
         [Fact]
         public void PerformanceTestAmountOfGradesGivenById()
         {
+            MovieSystem _ms = new MovieSystem("ratings.json");
             int movieId = 41422;
             int grade = 4;
             var stopwatch = new Stopwatch();
