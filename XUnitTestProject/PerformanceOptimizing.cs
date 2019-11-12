@@ -89,7 +89,7 @@ namespace XUnitTestProject
             var stopwatch = new Stopwatch();
 
             stopwatch.Start();
-            _ms.AverageGradeOfMovie(movieId);
+            //_ms.AverageGradeOfMovie(movieId);
             stopwatch.Stop();
 
             var stop = stopwatch.ElapsedMilliseconds;
