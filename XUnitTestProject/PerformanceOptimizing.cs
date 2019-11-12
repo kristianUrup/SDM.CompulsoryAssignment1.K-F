@@ -33,11 +33,11 @@ namespace XUnitTestProject
         public void PerformanceTestAverageScoreById()
         {
             MovieSystem _ms = new MovieSystem("ratings.json");
-            int movieId = 16272;
+            int reviewerId= 3;
             var stopwatch = new Stopwatch();
 
             stopwatch.Start();
-            _ms.AverageScoreById(movieId);
+            _ms.AverageScoreById(reviewerId);
             stopwatch.Stop();
 
             var stop = stopwatch.ElapsedMilliseconds;
@@ -51,11 +51,11 @@ namespace XUnitTestProject
         {
             MovieSystem _ms = new MovieSystem("ratings.json");
             var stopwatch = new Stopwatch();
-            int movieId = 16272;
-            int grade = 16;
+            int reviewerId = 1;
+            int grade = 3;
 
             stopwatch.Start();
-            _ms.AmountOfGradesById(movieId, grade);
+            _ms.AmountOfGradesById(reviewerId, grade);
             stopwatch.Stop();
 
             var stop = stopwatch.ElapsedMilliseconds;
