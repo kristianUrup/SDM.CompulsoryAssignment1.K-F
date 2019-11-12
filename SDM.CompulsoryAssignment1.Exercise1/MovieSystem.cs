@@ -133,7 +133,7 @@ namespace SDM.CompulsoryAssignment1.Exercise1
             {
                 if (movie.MovieId == movieId && movie.Grade == grade)
                 {
-                    amount++;
+                    amount = amount + 1;
                 }
             }
 
