@@ -102,8 +102,8 @@ namespace XUnitTestProject
         public void PerformanceTestAmountOfGradesGivenById()
         {
             MovieSystem _ms = new MovieSystem("ratings.json");
-            int movieId = 41422;
-            int grade = 4;
+            int movieId = 1009622;
+            int grade = 3;
             var stopwatch = new Stopwatch();
 
             stopwatch.Start();
