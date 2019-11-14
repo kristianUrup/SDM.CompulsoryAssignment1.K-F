@@ -137,7 +137,10 @@ namespace SDM.CompulsoryAssignment1.Exercise1
                 }
             }
 
-            if (amount == 0) throw new InvalidDataException("No movie with that grade is found");
+            if (amount == 0)
+            {
+                throw new InvalidDataException("No movie with that grade is found");
+            }
 
             return amount;
         }
