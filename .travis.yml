@@ -4,6 +4,6 @@ dotnet: 2.1
 solution: SDM.CompulsoryAssignment1.sln
 
 script:
-- dotnet restore
-- dotnet build
+- dotnet restore SDM.CompulsoryAssignment1.sln
+- dotnet build SDM.CompulsoryAssignment1.sln
 - dotnet test XUnitTestProject/XUnitTestProject.csproj
